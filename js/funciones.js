@@ -81,7 +81,7 @@ btnant.addEventListener("click", () => {
     carrusel.offsetHeight;
     //aplica animacion de regreso
     carrusel.style.transition = "transform 0.45s ease";
-    carrusel.style.transform = "translateX(0)";
+    carrusel.style.transform = "translateX(-8px)";
 
     setTimeout(() => {
         actualizarcard();
