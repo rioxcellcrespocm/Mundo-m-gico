@@ -927,3 +927,25 @@ h3{
         padding: 120px 80px;
     }
 }
+@media screen and (min-width:2400px){
+    .contenidoP h2{
+        font-size: 4rem;
+    }
+    .siguiente {
+        right: 4.9rem;
+    }
+    .contenidoP p{
+        font-size: 1.8rem;
+    }
+    .centro{
+        max-width: 430px;
+    }
+}
+@media screen and (min-width:4000px){
+    .contenidoP{
+        width: 50%;
+    }
+    .contenidoU{
+        width: 36%;
+    }
+}
