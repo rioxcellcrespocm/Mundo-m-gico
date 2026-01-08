@@ -447,7 +447,7 @@ h3{
     z-index: 10;
 }
 .atras{ left:  1rem;}
-.siguiente{right: 1rem;}
+.siguiente{right: 1.9rem;}
 /*------------------------------------------------FOOTER------------------------------*/
 .footer{
     font-family: playfair display, serif;
