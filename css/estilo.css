@@ -1,3 +1,4 @@
+/*Aca empezamos los estilos de la pagina en desktop*/
 :root{
 --card-width: 260px;
 --card-gap: 32px;  
@@ -13,6 +14,7 @@ body{
     background-color:#00001b;
     font-family: cinzel , serif;
 }
+/*-----------------------------------------header-------------------------------------------*/
 header{
     position: sticky;
     top:0;
@@ -31,13 +33,7 @@ header{
     backdrop-filter: blur(6px);
     border-radius: 50px;
 }
-.menu{
-    display: flex;
-    justify-content: center;
-}
-.hamburguesa{
-    display: none;
-}
+/*logo*/
 .logo img{
     height: 70px;
     width: auto;
@@ -46,6 +42,15 @@ header{
 .logo a{
     display: flex;
     align-items: center;
+}
+/*--------------------------*/
+/*menu*/
+.menu{
+    display: flex;
+    justify-content: center;
+}
+.hamburguesa{
+    display: none;
 }
 nav ul{
     display:flex;
@@ -61,6 +66,7 @@ nav a{
     letter-spacing: 1px;
     position: relative;
 }
+/*efecto linea debajo de lo itens del menu*/
 nav a::after {
     content: "";
     position: absolute;
@@ -74,6 +80,8 @@ nav a::after {
 nav a:hover::after {
     width: 100%;
 }
+/*----------------fin efecto y menu--------------------------*/
+/*boton decorativo*/
 .cta{
     justify-self: end;
 }
@@ -91,6 +99,7 @@ nav a:hover::after {
     transition: bakcground 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
     text-decoration: none;
 }
+/*efecto animado pulse del boton*/
 .btn:hover{
     animation: pulse 1.2s ease-in-out infinite;
 }
@@ -105,18 +114,18 @@ nav a:hover::after {
         transform: scale(1);
     }
 }
+/*---------------------fin boton y header----------------*/
+/*----------------------Primera seccion de la pagina o hero-----------------------------*/
 .hero{
     position: relative;
     overflow:hidden;
     height: calc(100dvh - 80px);
     padding: 0;
 }
-.hero {
-  position: relative;
-}
+/*borde inferior en degrade con before*/
 .hero::before {
-  content: "";
-    background: linear-gradient(1turn, #15111D 40%, rgba(21, 17, 29, 0));
+    content: "";
+    background: linear-gradient(0deg, #15111D 40%, rgba(21, 17, 29, 0));
     position: absolute;
     bottom: -2px;
     left: 0;
@@ -125,7 +134,6 @@ nav a:hover::after {
     z-index: 3;
     pointer-events: none;
 }
-
 .video{
     position: absolute;
     inset: 0;
@@ -188,6 +196,7 @@ h3{
     box-shadow: 0 8px 16px rgba(0,0,0,0.35);
     transform: translateY(-2px);
 }
+/*--------------------------------------seccion del universo magico--------------------------------------*/
 .universo{
     min-height: 100dvh;
     position: relative;
@@ -196,8 +205,7 @@ h3{
     background:
     url("../img/stars.png"),  
     url("../img/p1.png"),
-    linear-gradient(180deg, #15111D,#323657 121.35%);
-
+    linear-gradient(180deg, #15111D,#323657 121%);
     background-repeat: no-repeat;
     background-size: 1900px auto, 2000px auto, 100% 100%;
     background-position: 50% 25%, 51% bottom !important;
@@ -291,7 +299,7 @@ h3{
     pointer-events: none;
     z-index: -1;
 }
-/*------------------------------------------------CARDS------------------------------*/
+/*------------------------------------------------CARDS UNIVERSO------------------------------*/
 .cardsgrid{
     width: 100%;
     display: grid;
@@ -314,8 +322,7 @@ h3{
     right: 0;
     bottom: 5px;
     height: 17px;
-    background: url("../img/borde.png") bottom center no-repeat;
-    background-size: contain;
+    background: url("../img/borde.png") bottom center / contain no-repeat;
     pointer-events: none;
 }
 .card-img{
@@ -364,16 +371,16 @@ h3{
     font-size: 0.95rem;
     opacity: 0.85;
 }
-/*--------------------------------------------------------------------------------------------------------------------------*/
+/*-----------------------------------------------Seccion de personajes del mundo magico------------------------------------------------------------*/
 .personajes{
     min-height: 100dvh;
     position: relative;
     overflow: hidden;
     padding: 90px 0 120px;
-    background-image: url(../img/p2.png), url(../img/stars.png), linear-gradient(180deg, #120B0E, #474083 121.35%);
+    background-image: url(../img/p2.png), url(../img/stars.png), linear-gradient(180deg, #120B0E, #474083 121%);
     background-repeat: no-repeat;
-    background-size: 1900px auto, 2000px auto, 100% 100%;
-    background-position: 50% 100%, 50% bottom !important;
+    background-size: 2000px auto, 1900px auto, 100% 100%;
+    background-position: 50% bottom, 50% 25% !important;
 }
 .personajes::before{
     content:"";
@@ -400,7 +407,7 @@ h3{
     transition: transform 0.45s ease;
 }
 .cardH{
-    flex: 0 0 var(--card-width);
+    flex: 0 0 var(--card-width); /*cada card mide estrictamente el ancho de la variable y cambio variables segun pantalla*/
     height: 380px;
     background: linear-gradient(180deg,  #0d0b1f, #1a1633);
     border-radius:20px;
@@ -442,6 +449,13 @@ h3{
 .atras{ left:  1rem;}
 .siguiente{right: 1rem;}
 /*------------------------------------------------FOOTER------------------------------*/
+.footer{
+    font-family: playfair display, serif;
+    max-width: 100%;
+    padding: 30px 20px 10px;
+    color:#f5f5f5;
+    background: linear-gradient(to right,transparent,rgba(255,255,255,0.3),transparent) top / 100% 1px no-repeat,#0b0b14;
+}
 .contenidoP{
     width: 65%;
     margin: 0 auto;
@@ -449,13 +463,6 @@ h3{
     flex-wrap: wrap;
     justify-content: center;
     color: white;
-}
-.footer{
-    font-family: playfair display, serif;
-    max-width: 100%;
-    padding: 30px 20px 10px;
-    color:#f5f5f5;
-    background: linear-gradient(to right,transparent,rgba(255,255,255,0.3),transparent) top / 100% 1px no-repeat,#0b0b14;
 }
 .footer .centro a{
     font-size: 1em;
@@ -813,6 +820,12 @@ h3{
     }
     .card-img::before{
         top: 134px;
+    }
+    .contenidoU h2{
+        font-size: 1.2rem;
+    }
+    .contenidoP h2{
+        font-size: 1.2rem;
     }
 }
 @media screen and (max-width:350px){

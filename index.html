@@ -1,3 +1,7 @@
+<!-- esta es una pagina inspirada en el universo de Harry Potter, la pagina cuenta con su header stiky el cual tiene un contenedor para la 
+ barra de navegacion, en la barra de navegacion esta el logo de la pagina el menu de navegacion y un pequeño boton, el cual desaparece en 
+ los responsive por mejoria visual, luego estan las 3 secciones hechas: hero, universo y perosnajes, y por ultimo el footer -->
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,33 +15,43 @@
     <link rel="stylesheet" href="css/estilo.css">
     <script defer src="js/funciones.js"></script>
 </head>
-
 <body>
+    <!--este es el header stiky para mejor navegacion en la landing page, con su contenedor ya descrito antes, este se maqueto con un grid-->
     <header>
         <div class="contenh">
+
             <div class="logo">
-                <a href=""><img src="img/logomm.png" alt="Logo Mundo Mágico"></a>
+                <a href=""><img src="img/logomm.png" alt="Logo Mundo Mágico"></a>   
             </div>
+
             <nav class="menu">
                 <ul>
-                    <li><a href="#hero">Inicio</a></li>
-                    <li><a href="#universo">Universo</a></li>
-                    <li><a href="#personajes">Personajes</a></li>
+                    <li><a href="#hero">Inicio</a></li>           
+                    <li><a href="#universo">Universo</a></li>       
+                    <li><a href="#personajes">Personajes</a></li>                                                 
+                    
                 </ul>
             </nav>
+
             <div class="cta">
                 <a href="#universo" class="btn">Explorar</a>
             </div>
-            <button class="hamburguesa">☰
-            </button>
+
+            <button class="hamburguesa">☰</button>
+
         </div>
     </header>
+    <!-- seccion#1 o hero: en esta seccion se plasmo un video inmersivo del mundo magico, se uncluyo un pequeño
+    texto narrativo junto a un boton basico para tenr mas estetica-->
     <section class="hero" id="hero">
+
         <video class="video" autoplay muted loop playsinline>
             <source src="videos/hero.mp4" type="video/mp4">
         </video>
-        <div class="capa"></div>
-        <div class="contenido">
+
+        <div class="capa"></div> <!--capa encima del video-->
+
+        <div class="contenido">                               
             <h1>Mundo Mágico</h1>
             <p>
                 Explora antiguos castillos, casas legendarias  
@@ -47,15 +61,22 @@
                 <a href="#universo" class="btn2">Descubre la magia</a>
             </div>
         </div>
+
     </section>
+    <!-- la seccion de universo magico mantiene la magia de la tematica con un fondo de color y una imagen de estrellas por encima 
+     ademas coloque la misma imagen con una animacion de caida para hacer un efecto mejor, la maquetacion la hice con dos grid, uno principal 
+     que maneja dos tipodes de contenido uno de texto y otro de cards, el segundo es un grid que maneja las cards -->
     <section class="universo" id="universo">
+
         <div class="contenidoU">
             <h2>El universo Magico</h2>
             <p>Un mundo antiguo donde la magia, las casas legendarias y los secretos
                 olvidados conviven más allá del tiempo.
             </p>
         </div>
+
         <div class="grid-principal">
+
             <div class="texto1">
                 <h3>Explora los secretos del mundo mágico</h3>
                 <p>Adéntrate en un universo donde la magia fluye a través de cada rincón,
@@ -63,59 +84,66 @@
                 </p>
                 <a href="#personajes" class="btn-3">Descubre tu personaje</a>
             </div>
+
             <div class="cardsgrid">
-            <div class="card">
-                <div class="card-img">
-                    <img src="img/hechizos.jpg" alt="magia antigua">
+
+                <div class="card">
+                    <div class="card-img">
+                        <img src="img/hechizos.jpg" alt="magia antigua">
+                    </div>
+                    <span class="etiqueta">Magia antigua</span>
+                    <div class="card-contenido">
+                        <p>Conjuros olvidados y saberes prohibidos que dieron forma al mundo mágico.</p>
+                    </div>
                 </div>
-                <span class="etiqueta">Magia antigua</span>
-                <div class="card-contenido">
-                    <p>Conjuros olvidados y saberes prohibidos que dieron forma al mundo mágico.</p>
+
+                <div class="card">
+                    <div class="card-img">
+                        <img src="img/creaturas.jpg" alt="creaturas místicas">
+                    </div>
+                    <span class="etiqueta">Criaturas Místicas</span>
+                    <div class="card-contenido">
+                        <p>Dragones, hipogrifos y seres que habitan más allá de la vista humana.</p>
+                    </div>
                 </div>
-               
+
+                <div class="card">
+                    <div class="card-img">
+                        <img src="img/paisajes.jpg" alt="Lugares legendarios">
+                    </div>
+                    <span class="etiqueta">Lugares Legendarios</span>
+                    <div class="card-contenido">
+                        <p>Castillos, bosques encantados y rincones donde la magia despierta.</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-img">
+                        <img src="img/artefactos2.webp" alt="artefactos mágicos">
+                    </div>
+                    <span class="etiqueta">Artefactos Mágicos</span>
+                    <div class="card-contenido">
+                        <p>Objetos poderosos que contienen la esencia de la magia antigua.</p>
+                    </div>
+                </div>      
             </div>
-            <div class="card">
-                <div class="card-img">
-                    <img src="img/creaturas.jpg" alt="creaturas místicas">
-                </div>
-                <span class="etiqueta">Criaturas Místicas</span>
-                <div class="card-contenido">
-                    <p>Dragones, hipogrifos y seres que habitan más allá de la vista humana.</p>
-                </div>
-               
-            </div>
-            <div class="card">
-                <div class="card-img">
-                    <img src="img/paisajes.jpg" alt="Lugares legendarios">
-                </div>
-                <span class="etiqueta">Lugares Legendarios</span>
-                <div class="card-contenido">
-                    <p>Castillos, bosques encantados y rincones donde la magia despierta.</p>
-                </div>
-                
-            </div>
-            <div class="card">
-                <div class="card-img">
-                    <img src="img/artefactos2.webp" alt="artefactos mágicos">
-                </div>
-                <span class="etiqueta">Artefactos Mágicos</span>
-                <div class="card-contenido">
-                    <p>Objetos poderosos que contienen la esencia de la magia antigua.</p>
-                </div>
-                
-            </div>      
-        </div>
         </div>
     </section>
+    <!-- la seccion de personajes refleja solo un pequeño titulo con un parrajo de la seccion, el resto de la seccion la ocupa un carrusel
+      con personajes distintivos de las sagas -->
     <section class="personajes" id="personajes"> 
+
         <div class="contenidoP">
             <h2>Personajes legendarios</h2>
             <p>Conoce a los magos, brujas y criaturas que han dejado su huella en la historia del mundo mágico.
             </p>
         </div>
-        <div class="carrusel">
+        
+        <div class="carrusel"><!-- panel completo del carrusel casrd + botones-->
+
             <button class="atras nav">‹</button>
-            <div class="contenedorcarrusel">
+            <div class="contenedorcarrusel"><!-- contenedor de las card -->
+                
                 <div class="cardH activa">
                     <img src="img/harry.jpg" alt="">
                     <h3>Harry Potter</h3>
@@ -158,7 +186,7 @@
 
                 <div class="cardH">
                     <img src="img/argus flich.webp" alt="">
-                    <h3>argus flich.webp</h3>
+                    <h3>argus flich</h3>
                 </div>
 
                 <div class="cardH">
@@ -174,8 +202,12 @@
             <button class="siguiente nav">›</button>
         </div>
     </section>
+    <!-- footer y final de la landing donde se muestra de nuevo el logo, las "redes de la pagina" un mapa del sitio 
+     que tambien redireccionan a las secciones y de ultimo los terminos legales, la esturctura tambien es un grid-->
     <footer class="footer">
+
         <div class="footerGrid">
+
             <div class="logof">
                 <a href=""><img src="img/logomm.png" alt="Mundo magico"></a>
                 <p class="frase1">
@@ -183,12 +215,14 @@
                 </p>
 
             </div>
+
             <div class="centro">
                 <h2>Mapa del sitio</h2>
                 <a href="#hero">Inicio</a>
                 <a href="#universo">Universo</a>
                 <a href="#personajes">Personajes</a>
             </div>
+
             <div class="redes">
                 <h2>Siguenos en redes</h2>
                 <a href="#"><img src="img/instagram.png" alt="Instagram">
@@ -201,11 +235,13 @@
                     <P>Tik Tok</P>
                 </a>
             </div>
+
             <div class="legales">
                 <p>
                     &copy; 2024 Mundo Mágico. Todos los derechos reservados.
                 </p>
             </div>
+
         </div>
     </footer>
 
