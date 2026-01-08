@@ -57,7 +57,7 @@ btnsig.addEventListener("click", () =>{
 
         carrusel.appendChild(carrusel.firstElementChild);
 
-        carrusel.style.transform = "translateX(-8px)";
+        carrusel.style.transform = "translateX(0)";
 //Fuerza reflow para reiniciar transicion
         carrusel.offsetHeight;
 
@@ -81,7 +81,7 @@ btnant.addEventListener("click", () => {
     carrusel.offsetHeight;
     //aplica animacion de regreso
     carrusel.style.transition = "transform 0.45s ease";
-    carrusel.style.transform = "translateX(-8px)";
+    carrusel.style.transform = "translateX(0)";
 
     setTimeout(() => {
         actualizarcard();

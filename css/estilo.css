@@ -600,16 +600,29 @@ h3{
     --card-width: 220px;
     --card-gap: 24px;  
     }
+    .carrusel{
+        overflow-x: auto;
+        padding: 2rem 1rem;
+        scroll-snap-type: x mandatory;
+    }
+    .contenedorcarrusel{
+        transform: none !important;
+        transition: none !important;
+        width: max-content;
+    }
     .cardH{
         transform: scale(1) !important;
         opacity: 1 !important;
+        scroll-snap-align: center;
     }
-
    .cardH.activa{
         transform: scale(1);
         opacity: 1;
         box-shadow: none;
     }  
+    .nav{
+        display: none;
+    }
     .contenh{
         max-width: 85%;
         margin: 0 auto;
