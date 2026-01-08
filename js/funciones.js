@@ -57,7 +57,7 @@ btnsig.addEventListener("click", () =>{
 
         carrusel.appendChild(carrusel.firstElementChild);
 
-        carrusel.style.transform = "translateX(0)";
+        carrusel.style.transform = "translateX(-8px)";
 //Fuerza reflow para reiniciar transicion
         carrusel.offsetHeight;
 
