@@ -833,8 +833,11 @@ h3{
     --card-width: 92vw;
     --card-gap: 10px;
     }
+    .personajes{
+        min-height: 100svh;
+    }
     .contenidoP h2{
-        font-size: 1.2rem;
+        font-size: 1.1rem;
     }
     .contenedorcarrusel{
         justify-content: center;
@@ -870,7 +873,7 @@ h3{
         min-height: auto;
     }
     .card::after{
-        bottom: 0;
+        bottom: 2;
         height: 20px;
         width: 100%;
     }
