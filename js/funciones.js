@@ -4,10 +4,11 @@
 
 const boton = document.querySelector(".hamburguesa");
 const menu = document.querySelector(".menu");
-const carrusel = document.querySelector(".contenedorcarrusel");
 const btnsig = document.querySelector(".siguiente");
 const btnant = document.querySelector(".atras");
+const carrusel = document.querySelector(".contenedorcarrusel");
 
+const cards = document.querySelectorAll(".cardH");
 //----------------------------------------------------
 //               menu hamburguesa
 //----------------------------------------------------
@@ -16,78 +17,43 @@ boton.addEventListener("click", () => {
     const abierto = menu.classList.toggle("activo");
     boton.textContent = abierto ? "✖" : "☰";
 });
+//--------------------------------------------------//
 
-//------------------------------------------------------
-//              Funciones del carrusel
-//------------------------------------------------------
-//calcula cuanto debe deslazarse el carrusel(distancia) ANCHO CARD + GAP
-function desplazamiento() {
-    const card = carrusel.children[0];
-    const gap = parseFloat(
-        getComputedStyle(carrusel).gap
-    ) || 0;
+function moverSiguiente() {
+    const card = carrusel.firstElementChild;
+    const ancho = card.offsetWidth + 24;
 
-    return card.offsetWidth + gap;
-};
-
-//Marca visualmente la card centarl como activa
-function actualizarcard() {
-    const cards = carrusel.children;
-//quita la clase activa a todos
-    Array.from(cards).forEach(card => {
-        card.classList.remove("activa");
+    // 1. Deslizamos el scroll suavemente
+    carrusel.scrollTo({
+        left: ancho,
+        behavior: "smooth"
     });
-//activa la card central en la posicion 2
-    if(cards[2]) {
-        cards[2].classList.add("activa");
-    }
-};
-//---------------------------------------------------------
-//                Boton siguiente
-//---------------------------------------------------------
-//Mueve el carrusel hacia la izquierda
-btnsig.addEventListener("click", () =>{
-    const d = desplazamiento();
-//Animacion del desplazamiento
-    carrusel.style.transition = "transform 0.45s ease";
-    carrusel.style.transform = `translateX(-${d}px)`;
-//Reorganiza los elementos para el efecto infinito
+
+    // 2. Esperamos a que termine (500ms) y movemos el HTML sin que se note
     setTimeout(() => {
-        carrusel.style.transition = "none";
+        carrusel.appendChild(card); // Mandamos la primera al final
+        carrusel.scrollTo({ left: 0, behavior: "auto" }); // Reseteamos el scroll de golpe
+    }, 500);
+}
 
-        carrusel.appendChild(carrusel.firstElementChild);
+function moverAnterior() {
+    const card = carrusel.lastElementChild;
+    const ancho = card.offsetWidth + 24;
 
-        carrusel.style.transform = "translateX(0)";
-//Fuerza reflow para reiniciar transicion
-        carrusel.offsetHeight;
+    // 1. Movemos la carta atrás del todo (invisible)
+    carrusel.insertBefore(card, carrusel.firstElementChild);
+    
+    // 2. Saltamos el scroll al ancho de la carta (invisible)
+    carrusel.scrollTo({ left: ancho, behavior: "auto" });
 
-        carrusel.style.transition = "transform 0.45s ease";
-
-        actualizarcard();
-    }, 450);
-});
-//Mueve el carrusel hacia la derecha
-btnant.addEventListener("click", () => {
-    const d = desplazamiento();
-    //reocoloca la ultima card al inicio sin animacion
-    carrusel.style.transition = "none";
-    carrusel.insertBefore(
-        carrusel.lastElementChild,
-        carrusel.firstElementChild
-    );
-    //coloca el carrusel desplazado
-    carrusel.style.transform = `translateX(-${d}px)`;
-    //Fuerza reflow
-    carrusel.offsetHeight;
-    //aplica animacion de regreso
-    carrusel.style.transition = "transform 0.45s ease";
-    carrusel.style.transform = "translateX(0)";
-
+    // 3. Animamos suavemente hacia el 0
     setTimeout(() => {
-        actualizarcard();
-    }, 450);
-});
+        carrusel.scrollTo({
+            left: 0,
+            behavior: "smooth"
+        });
+    }, 20);
+}
 
-//Desde aqui inicia, marca la card central al cargar pagina
-
-actualizarcard();
+btnsig.addEventListener("click", moverSiguiente);
+btnant.addEventListener("click", moverAnterior);
