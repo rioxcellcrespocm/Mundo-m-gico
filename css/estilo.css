@@ -556,15 +556,6 @@ h3{
 --card-width: 240px;
 --card-gap: 28px;  
 }
-.cardH{
-    transform: scale(1) !important;
-    opacity: 1 !important;
-  }
-
-.cardH.activa{
-    transform: scale(1);
-    opacity: 1;
-}
 .carrusel{
     max-width: 900px;
     margin: auto;
@@ -594,28 +585,18 @@ h3{
     --card-width: 220px;
     --card-gap: 24px;  
     }
-    .carrusel{
-        overflow-x: auto;
-        padding: 2rem 1rem;
-        scroll-snap-type: x mandatory;
-    }
-    .contenedorcarrusel{
-        transform: none !important;
-        transition: none !important;
-        width: max-content;
-    }
-    .cardH{
-        transform: scale(1) !important;
-        opacity: 1 !important;
-        scroll-snap-align: center;
-    }
-   .cardH.activa{
-        transform: scale(1);
-        opacity: 1;
-        box-shadow: none;
-    }  
     .nav{
         display: none;
+    }
+    .contenedorcarrusel {
+        overflow-x: auto !important; /* Fuerza el permiso de deslizar */
+        touch-action: pan-x; /* Permite solo el movimiento horizontal con el dedo */
+        -webkit-overflow-scrolling: touch; /* Suavidad en iPhone */
+        scrollbar-width: none;
+    }
+
+    .contenedorcarrusel::-webkit-scrollbar {
+        display: none !important;
     }
     .contenh{
         max-width: 85%;
